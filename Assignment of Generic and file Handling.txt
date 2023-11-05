@@ -1,0 +1,174 @@
+                     Assignment of IO operation 
+
+Ans 1.
+
+InputStream-: InputStream is an abstract class of Byte Stream that describe stream input and 
+it is used for reading and it could be a file, image, audio, video, webpage, etc. it doesn’t matter. 
+Thus, InputStream read data from source one item at a time.
+
+OutputStream-: OutputStream is an abstract class of Byte Stream that describes stream output and 
+it is used for writing data to a file, image, audio, etc. Thus, OutputStream writes data to the destination one at a time.
+
+Ans 2.
+
+void flush()
+void close()
+void write()
+
+Ans 3.
+
+Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the 
+reverse process where the byte stream is used to recreate the actual Java object in memory. This mechanism 
+is used to persist the object.
+
+The byte stream created is platform independent. So, the object serialized on one platform can be deserialized 
+on a different platform. To make a Java object serializable we implement the java.io.Serializable interface. 
+The ObjectOutputStream class contains writeObject() method for serializing an Object.
+
+Ans 4.
+
+Serializable interface is a marker interface. The marker interface provides a hint to the Java runtime 
+that the implementing class allows itself to be serialized. The runtime will take advantage of this interface 
+to serialize the object. Serializable interface in java is a special interface to be implemented by data classes 
+in java. When a class implements this interface, it can be persisted in a database. This interface is declared in java.io package. 
+
+Ans 5.
+
+Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory. 
+This mechanism is used to persist the object.
+
+The byte stream created is platform independent. So, the object serialized on one platform can be deserialized 
+on a different platform. To make a Java object serializable we implement the java.io.Serializable interface. 
+The ObjectOutputStream class contains writeObject() method for serializing an Object. 
+
+Ans 6.
+
+You must use the writeObject() method of the ObjectOutputStream class for serialization and readObject() method of the InputObjectStream class for deserialization purpose.
+
+Syntax for the writeObject() method:
+public final void writeObject(Object o) throws IO Exception
+
+Syntax for the readObject() method:
+public final Object readObject() throws IOException, ClassNotFoundException
+
+Ans 7.
+
+ a).Make your class implement the Serializable interface to indicate it can be serialized.
+ b).Serialize the object using an ObjectOutputStream, typically by writing it to a file or stream.
+ c).Deserialize the object using an ObjectInputStream to read the serialized data.
+ d).Handle exceptions like ClassNotFoundException.
+ e).Don't forget to close the streams to avoid resource leaks.
+
+These steps allow you to convert a serialized object back into its original Java class instance.
+
+Ans 8.
+
+To avoid certain member variables of a class from getting serialized in Java, mark them as transient. 
+These transient fields will be excluded from the serialization process, and their values will not be saved or 
+restored during deserialization.
+
+
+Ans 9.
+
+FileInputStream, FileOutputStream, FileReader, FileWriter, RandomAccessFile, and others for reading, writing, 
+and manipulating files and directories. In Java 7 and later, Path, Paths, and FileSystem from the java.nio.file 
+package provide more flexible file handling.
+
+
+Ans 10.
+
+Serialization:
+
+a).  Automatic Serialization: Serialization is automatic and based on the Serializable interface.
+b).  Limited Control: Limited control over which fields get serialized, as it includes private and transient fields.
+c). Default Serialization Logic: Standard serialization process is used, and you can influence it with 
+      readObject and writeObject methods.
+d).  Performance and Size: Serialization can be slower and may produce larger serialized files due to metadata 
+    and class information.
+
+Externalization:
+
+a).Explicit Implementation: Externalization requires explicit implementation of the Externalizable interface.
+b).Fine-Grained Control: Provides fine-grained control over the serialization process, allowing you to 
+   choose which fields to serialize and their format.
+c).Custom Serialization Logic: Custom readExternal and writeExternal methods allow you to define your own serialization logic.
+d).Performance and Size: Externalization can be more efficient in terms of performance and produce smaller 
+    serialized files due to greater control.
+
+
+
+                                       Assignment of Generics 
+
+Ans 1.
+
+Generics means parameterized types. The idea is to allow type (Integer, String, … etc., and user-defined types) 
+to be a parameter to methods, classes, and interfaces. Using Generics, it is possible to create classes that work 
+with different data types. An entity such as class, interface, or method that operates on a parameterized type is a generic entity.
+ 
+Ans 2.
+
+Programs that use Generics has got many benefits over non-generic code. 
+
+1. Code Reuse: We can write a method/class/interface once and use it for any type we want.
+
+2. Type Safety: Generics make errors to appear compile time than at run time (It’s always better to know problems in
+ your code at compile time rather than making your code fail at run time). Suppose you want to create an ArrayList that
+ store name of students, and if by mistake the programmer adds an integer object instead of a string, the compiler
+ allows it. But, when we retrieve this data from ArrayList, it causes problems at runtime.
+
+Ans 3.
+
+A Generic class simply means that the items or functions in that class can be generalized with the parameter(example T) 
+to specify that we can add any type as a parameter in place of T like Integer, Character, String, Double or any other
+user-defined type.
+
+Ans 4.
+
+Each type parameter section contains one or more type parameters separated by commas. A type parameter, also known
+ as a type variable, is an identifier that specifies a generic type name.
+
+The type parameters can be used to declare the return type and act as placeholders for the types of the arguments 
+passed to the generic method, which are known as actual type arguments.
+
+
+Ans 5.
+
+Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.
+
+The syntax for a generic method includes a list of type parameters, inside angle brackets, which appears before the method's return type. For static generic methods, the type parameter section must appear before the method's return type.
+
+Ans 6.
+
+ArrayList: This is a class in many programming languages, such as Java, C#, and others. It is a dynamic 
+array that can grow or shrink in size as needed. 
+ArrayList is a part of the Java Collections Framework and can store objects of any type. You can use ArrayList 
+to store a collection of objects, and it provides methods for adding, removing, and accessing elements in the list. 
+For example, in Java:
+
+ArrayList<String> list = new ArrayList<String>();
+list.add("Hello");
+list.add("World");
+String element = list.get(0);
+
+The main difference between ArrayList and ArrayList<T> is type safety. With ArrayList, you can store objects of any type, and you need to cast them when you retrieve them, which can lead to runtime errors if the types don't match. In contrast, ArrayList<T> is type-safe, and it ensures that you can only add and retrieve elements of the specified type T. This makes ArrayList<T> preferable when you know the specific type of elements you want to store in the collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
